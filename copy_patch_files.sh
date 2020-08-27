@@ -1,0 +1,11 @@
+cp ./ParaViewCore/ClientServerCore/Rendering/vtkPVRenderView.cxx ~/data/cdiaz8/paraview_yurt_patch
+cp ./VTK/Rendering/Core/CMakeLists.txt ~/data/cdiaz8/paraview_yurt_patch/VTK
+cp ./VTK/Rendering/Core/vtkCamera.cxx  ~/data/cdiaz8/paraview_yurt_patch/VTK
+cp ./VTK/Rendering/Core/vtkCamera.h ~/data/cdiaz8/paraview_yurt_patch/VTK
+cp ./VTK/Rendering/Core/vtkRenderer.cxx ~/data/cdiaz8/paraview_yurt_patch/VTK
+cp ./VTK/Rendering/Core/vtkRenderer.h ~/data/cdiaz8/paraview_yurt_patch/VTK
+cp ./VTK/Rendering/OpenGL2/vtkOpenGLRenderer.cxx  ~/data/cdiaz8/paraview_yurt_patch/VTK
+cp ./VTK/Rendering/OpenGL2/vtkOpenGLRenderer.h ~/data/cdiaz8/paraview_yurt_patch/VTK
+cp ./VTK/Rendering/OpenGL2/vtkOpenGLRenderWindow.cxx  ~/data/cdiaz8/paraview_yurt_patch/VTK
+cp ./VTK/Rendering/OpenGL2/vtkOpenGLRenderWindow.h ~/data/cdiaz8/paraview_yurt_patch/VTK
+cp ./VTK/Rendering/OpenGL2/vtkXOpenGLRenderWindow.cxx ~/data/cdiaz8/paraview_yurt_patch/VTK 

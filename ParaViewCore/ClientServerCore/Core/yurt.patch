@@ -1,0 +1,57 @@
+diff -ru ./vtkPVServerOptions.cxx /users/cdiaz8/data/cdiaz8/paraview-v5.6.0-RC1/ParaViewCore/ClientServerCore/Core/vtkPVServerOptions.cxx
+--- ./vtkPVServerOptions.cxx	2018-10-16 10:24:59.661315000 -0400
++++ /users/cdiaz8/data/cdiaz8/paraview-v5.6.0-RC1/ParaViewCore/ClientServerCore/Core/vtkPVServerOptions.cxx	2018-09-05 10:45:17.000000000 -0400
+@@ -205,11 +205,6 @@
+         str >> info.UpperRight[j];
+       }
+     }
+-    else if(key == "ScalablePol")
+-    {
+-      //TODO: Check if file is valid
+-      info.ScalablePol = value;
+-    }
+   }
+   if (caveBounds && caveBounds != 3)
+   {
+@@ -281,16 +276,6 @@
+   return this->Internals->MachineInformationVector[idx].Name.c_str();
+ }
+ 
+-const char* vtkPVServerOptions::GetScalablePol(unsigned int idx)
+-{
+-	if (idx >= this->Internals->MachineInformationVector.size())
+-    {
+-    return 0;
+-    }
+-    
+-    return this->Internals->MachineInformationVector[idx].ScalablePol.c_str();
+-}
+-
+ //----------------------------------------------------------------------------
+ const char* vtkPVServerOptions::GetDisplayName(unsigned int idx)
+ {
+diff -ru ./vtkPVServerOptions.h /users/cdiaz8/data/cdiaz8/paraview-v5.6.0-RC1/ParaViewCore/ClientServerCore/Core/vtkPVServerOptions.h
+--- ./vtkPVServerOptions.h	2018-10-16 10:26:21.813933000 -0400
++++ /users/cdiaz8/data/cdiaz8/paraview-v5.6.0-RC1/ParaViewCore/ClientServerCore/Core/vtkPVServerOptions.h	2018-09-05 10:45:17.000000000 -0400
+@@ -74,7 +74,6 @@
+   double* GetLowerLeft(unsigned int idx);
+   double* GetLowerRight(unsigned int idx);
+   double* GetUpperRight(unsigned int idx);
+-  const char* GetScalablePol(unsigned int idx);
+   //@}
+ 
+   // Returns -1 to indicate not stereo type was specified. 0 indicate no stereo
+diff -ru ./vtkPVServerOptionsInternals.h /users/cdiaz8/data/cdiaz8/paraview-v5.6.0-RC1/ParaViewCore/ClientServerCore/Core/vtkPVServerOptionsInternals.h
+--- ./vtkPVServerOptionsInternals.h	2018-10-16 10:27:39.906130000 -0400
++++ /users/cdiaz8/data/cdiaz8/paraview-v5.6.0-RC1/ParaViewCore/ClientServerCore/Core/vtkPVServerOptionsInternals.h	2018-09-05 10:45:17.000000000 -0400
+@@ -57,9 +57,6 @@
+     // vtkRenderWindow.h (VTK_STEREO_*).
+     int StereoType;
+ 
+-    //Stores the Scalable pol file path
+-    std::string ScalablePol;
+-
+     int CaveBoundsSet; // have the cave bounds been set
+     // store the cave bounds  all 0.0 if not set
+     double LowerLeft[3];
+Only in .: yurt.patch
